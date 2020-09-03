@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_test/flutter_test.dart';
+
 import 'package:mobile_career/features/postings/data/datasources/postings_list_remote_data_source.dart';
 import 'package:mobile_career/features/postings/data/models/postings_list_model.dart';
 import 'package:mockito/mockito.dart';
@@ -46,6 +48,27 @@ void main() {
       verify(mockHttpClient.get(tURL, headers: {
         'Content-Type': 'application/json',
       }));
+    }); //end test
+
+    test('should should retrun a PostingsList when the response is 200',
+        () async {
+      //arrange
+      setUpMockHttpClientSuccess200();
+      //act
+      final result = await dataSource.getPostingsList();
+      //assert
+      expect(result, equals(tPostingsListModel));
+    }); //end test
+
+    test('should throw a ServerException if the response code is 404',
+        () async {
+      //arrange
+      setupMockHttpClientFailure404();
+      //act
+      final result = await dataSource.getPostingsList();
+      debugPrint(result.toString());
+      //assert
+      // expect(result, throwsA(TypeMatcher<ServerException>()));
     }); //end test
   }); //end group
 }

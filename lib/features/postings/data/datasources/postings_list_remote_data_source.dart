@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:meta/meta.dart';
+import 'package:mobile_career/core/errors/exceptions.dart';
 import 'package:mobile_career/features/postings/data/models/postings_list_model.dart';
 
 abstract class PostingsListRemoteDataSource {
@@ -18,9 +19,8 @@ class PostingsListRemoteDataSourceImpl implements PostingsListRemoteDataSource {
   PostingsListRemoteDataSourceImpl({@required this.client});
 
   @override
-  Future<PostingsListModel> getPostingsList() {
-    return _getPostingsFromURL('http://localhost/RESTFUL_API/index.php');
-  }
+  Future<PostingsListModel> getPostingsList() =>
+      _getPostingsFromURL('http://localhost/RESTFUL_API/index.php');
 
   Future<PostingsListModel> _getPostingsFromURL(String url) async {
     final response = await client.get(
@@ -29,6 +29,10 @@ class PostingsListRemoteDataSourceImpl implements PostingsListRemoteDataSource {
         'Content-Type': 'application/json',
       },
     );
-    return PostingsListModel.fromHttpResponse(response);
+    if (response.statusCode == 200) {
+      return PostingsListModel.fromHttpResponse(response);
+    } else {
+      throw ServerException(message: 'Error returned when respose is not 200');
+    }
   }
 }
