@@ -6,9 +6,9 @@ import 'package:meta/meta.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 
-import '../../features/career_search/data/models/career_posting_model.dart';
+/* import '../../features/career_search/data/models/career_posting_model.dart';
 import '../../features/career_search/data/models/career_search_model.dart';
-import '../../features/career_search/domain/entities/career_posting.dart';
+import '../../features/career_search/domain/entities/career_posting.dart'; */
 
 class SQFliteData {
   static const city = "city";
@@ -31,31 +31,31 @@ class SQFliteData {
   static const wageRate = 'wageRate';
   static const openDate = 'OpenDate';
 
-  static final _careerSearchTable = 'careerPostingsTable';
-  static final _databaseVersion = 1;
+  static final TABLE_NAME = 'postings_table';
+
   static Database _database;
-  static final _databaseName = 'careersAptDatabase.db';
+  static final DATABASE_NAME = 'mobile_data.db';
 
   SQFliteData._privateConstructor();
   static final SQFliteData instance = SQFliteData._privateConstructor();
 
-  Future<Database> get database async {
+  /*  Future<Database> get database async {
     if (_database != null) {
       return _database;
     }
 
     _database = await _initDatabase();
     return _database;
-  }
+  } */
 
-  _initDatabase() async {
+/*   _initDatabase() async {
     Directory directory = await getApplicationDocumentsDirectory();
     String path = directory.path + _databaseName;
 
     return await openDatabase(path,
-        version: _databaseVersion, onCreate: _createDb);
-  }
-
+        version: 1, onCreate: _createDb);
+  } */
+/* 
   Future<void> _createDb(Database db, int version) async {
     final sqlQuery = ''' CREATE TABLE $_careerSearchTable
       (
@@ -80,9 +80,9 @@ class SQFliteData {
         $openDate TEXT
       )''';
     await db.execute(sqlQuery);
-  } //end method
+  } //end method */
 
-  Future<int> insertCareerSearch(
+/*   Future<int> insertCareerSearch(
       {@required CareerSearchModel careerSearchModel}) async {
     List<Map<String, dynamic>> maps = careerSearchModel.getlistOfMaps();
     Database db = await this.database;
@@ -120,8 +120,8 @@ class SQFliteData {
     }
 
     return result;
-  } //end method
-
+  } //end method */
+/* 
   Future<CareerSearchModel> getLocalCareerSearch(
       String location, String title) async {
     Database db = await this.database;
@@ -138,28 +138,28 @@ class SQFliteData {
       return CareerSearchModel(postingsList);
     } else
       return null;
-  } //end method
+  } //end method */
 
-  Future<int> deletePostings() async {
+  /* Future<int> deletePostings() async {
     Database db = await this.database;
     var result = db.delete(_careerSearchTable);
     return result;
-  } //end method
+  } //end method */
 
-  Future<CareerPosting> getCareerPosting(int postingId) async {
+  /*  Future<CareerPosting> getCareerPosting(int postingId) async {
     Database db = await this.database;
     var result = await db.query(_careerSearchTable,
         where: "postingId = ?", whereArgs: [postingId]);
     return result.isNotEmpty ? CareerPostingModel.fromJson(result.first) : null;
-  } //end method
+  } //end method */
 
-  Future<int> insertPosting(CareerPostingModel posting) async {
+  /* Future<int> insertPosting(CareerPostingModel posting) async {
     Database db = await this.database;
     var result = await db.insert(_careerSearchTable, posting.toMap());
     return result;
-  } //end method
+  } //end method */
 
-  Future<int> deleteAllPostings() async {
+  /* Future<int> deleteAllPostings() async {
     Database db = await this.database;
     var result = db.delete(_careerSearchTable);
     return result;
@@ -169,6 +169,6 @@ class SQFliteData {
     var db = await this.database;
     return Sqflite.firstIntValue(
         await db.rawQuery('SELECT COUNT(*) FROM $_careerSearchTable'));
-  } //end method
+  } //end method */
 
 }

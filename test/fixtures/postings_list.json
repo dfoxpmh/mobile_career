@@ -1,0 +1,43 @@
+[
+    {
+        "city":"Roblin",
+        "CloseDate":"Sep 03, 2020",
+        "Comp_Num":"MCCHSPSS203229",
+        "facility":"HERO Club",
+        "IsTerm":0,"Ongoing":0,
+        "PostingID":45849,
+        "shift":"Full Time",
+        "Shift_Desp":"1.00",
+        "Title":"Activity Instructor 2",
+        "department":"-",
+        "Rqualifications":"* Grade 12 education (MB Standards) \r\n* Post-secondary education in a health related discipline\r\n* Two (2) years of experience, knowledge and aptitude for working with the specific population\r\n* Other combinations of suitable education and experience may be considered\r\n* Current Food Safe Handling Certification as delineated in Prairie Mountain Health Policy PPG-000564 Food Safety Education\r\n* Province of Manitoba Class 5 Drivers Licence, or equivalent from province of residence, and access to a personal vehicle to provide service within Prairie Mountain Health \r\n* Proficiency with Microsoft programs (Outlook, Word, Excel, Access and PowerPoint), as well as Internet applications and other Information \r\n* Demonstrated experience in group facilitation and group dynamics\r\n* Demonstrated interpersonal skills to work with clients, families, and other health care providers\r\n* Ability to facilitate and\/or coordinate direct skills teaching\/skills programming\r\n* Knowledge and ability to develop and\/or utilize a range of program\/community resources\r\n* Demonstrated organizational, decision making, and problem solving skills\r\n* Demonstrated communication skills\r\n* Demonstrated flexibility to facilitate changes in techniques and procedures\r\n* Ability to display independent judgment and initiative\r\n* Ability to respect and promote a culturally diverse population\r\n* Ability to respect and promote confidentiality\r\n* Ability to perform the duties of the position on a regular basis",
+        "Day_Shift":"Days",
+        "shifthour":"8 hour shifts",
+        "unionRate":1,
+        "T_Salary_From":"",
+        "T_Salary_To":"",
+        "wageRate":"As per collective agreement",
+        "OpenDate":"Aug 27, 2020"
+        },
+        {
+            "city":"Camperville",
+            "CloseDate":"Jun 10, 2020",
+            "Comp_Num":"CHSCS202047",
+            "facility":"Primary Health Care",
+            "IsTerm":0,
+            "Ongoing":1,
+            "PostingID":44667,
+            "shift":"Casual",
+            "Shift_Desp":"",
+            "Title":"Administrative Secretary 2",
+            "department":"-",
+            "Rqualifications":"test",
+            "Day_Shift":"Days",
+            "shifthour":"Relief Position- 7.25 Hour Shifts",
+            "unionRate":1,
+            "T_Salary_From":"",
+            "T_Salary_To":"",
+            "wageRate":"As per collective agreement",
+            "OpenDate":"Jun 03, 2020"
+        }
+    ]
